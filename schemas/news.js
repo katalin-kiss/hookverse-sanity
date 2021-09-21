@@ -28,8 +28,9 @@ export default {
     },
     {
       name: 'info',
-      title: 'News Info',
-      type: 'text',
+      title: 'News information',
+      type: 'blockContent',
+      description: 'Required',
       validation: (Rule) => Rule.required(),
     },
     {
@@ -63,7 +64,7 @@ export default {
         return {
           title: title,
           subtitle: `Published at ${publishedAt.split('T')[0]}, expires at ${
-            expiresAt.split(T)[0]
+            expiresAt.split('T')[0]
           }`,
         };
       }
