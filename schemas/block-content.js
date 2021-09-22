@@ -72,5 +72,10 @@ export default {
       name: 'youtube',
       title: 'Youtube',
     },
+    {
+      type: 'gif',
+      title: 'Gif',
+      name: 'gif',
+    },
   ],
 };

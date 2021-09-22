@@ -1,4 +1,5 @@
 import { RiFileList3Line } from 'react-icons/ri';
+import { BiBookBookmark } from 'react-icons/bi';
 import { isUniqueSlug } from '../lib/isUniqueSlug';
 
 export default {
@@ -38,6 +39,14 @@ export default {
       type: 'blockContent',
     },
     {
+      name: 'category',
+      title: 'Category',
+      type: 'reference',
+      to: [{ type: 'category' }],
+      description: 'Required',
+      validation: (Rule) => Rule.required(),
+    },
+    {
       name: 'author',
       title: 'Author',
       type: 'reference',
@@ -65,10 +74,11 @@ export default {
       author: 'author.name',
       media: 'mainImage',
       date: 'publishedAt',
+      category: 'category.name',
     },
-    prepare({ author, title, media, date }) {
+    prepare({ author, title, media, date, category }) {
       return {
-        title: title,
+        title: `${title} in ${category}`,
         media: media,
         subtitle: `By ${author}, ${date.split('T')[0]}`,
       };

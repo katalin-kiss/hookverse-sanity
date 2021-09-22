@@ -4,7 +4,9 @@ import schemaTypes from 'all:part:@sanity/base/schema-type';
 import author from './author';
 import blockContent from './block-content';
 import blockImage from './block-image';
+import category from './category';
 import coverImage from './cover-image';
+import gif from './gif';
 import like from './like';
 import news from './news';
 import post from './post';
@@ -17,13 +19,15 @@ export default createSchema({
   types: schemaTypes.concat([
     post,
     news,
+    like,
+    category,
+    tag,
     author,
     blockContent,
     blockImage,
     coverImage,
-    like,
+    gif,
     seo,
-    tag,
     youtube,
   ]),
 });
