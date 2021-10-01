@@ -25,5 +25,17 @@ export default {
         },
       ],
     },
+    {
+      name: 'additionalTag',
+      title: 'Additional tags',
+      type: 'array',
+      of: [{ type: 'string' }],
+    },
+    {
+      name: 'imageForSocials',
+      title: 'Image for socials',
+      type: 'image',
+      description: 'Needs to be around 1200x630',
+    },
   ],
 };

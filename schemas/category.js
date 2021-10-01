@@ -21,7 +21,7 @@ export default {
       title: 'Color',
       type: 'color',
       options: {
-        disableAlpha: true,
+        disableAlpha: false,
       },
       description: 'Required',
       validation: (Rule) => Rule.required(),
