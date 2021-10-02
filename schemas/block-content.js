@@ -25,7 +25,6 @@ export default {
         { title: 'H1', value: 'h1' },
         { title: 'H2', value: 'h2' },
         { title: 'H3', value: 'h3' },
-        { title: 'H4', value: 'h4' },
         { title: 'Quote', value: 'blockquote' },
       ],
       lists: [
@@ -71,11 +70,6 @@ export default {
       type: 'youtube',
       name: 'youtube',
       title: 'Youtube',
-    },
-    {
-      type: 'gif',
-      title: 'Gif',
-      name: 'gif',
     },
   ],
 };

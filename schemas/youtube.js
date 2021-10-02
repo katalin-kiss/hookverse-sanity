@@ -10,24 +10,17 @@ export default {
       name: 'title',
       type: 'string',
       title: 'Video title',
-      description: 'Required',
-      validation: (Rule) => Rule.required(),
+      description: 'Optional',
     },
     {
       name: 'url',
       type: 'url',
       title: 'Youtube video URL',
+      description: 'Required, add embed url with optional start time.',
       validation: (Rule) =>
         Rule.uri({
           scheme: ['http', 'https'],
         }).required(),
-    },
-    {
-      name: 'startsAt',
-      type: 'string',
-      title: 'Video starts at',
-      description: 'Optional',
-      initialValue: '0:00',
     },
   ],
   preview: {
