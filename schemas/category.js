@@ -17,16 +17,6 @@ export default {
       validation: (Rule) => Rule.required(),
     },
     {
-      name: 'color',
-      title: 'Color',
-      type: 'color',
-      options: {
-        disableAlpha: false,
-      },
-      description: 'Required',
-      validation: (Rule) => Rule.required(),
-    },
-    {
       name: 'slug',
       title: 'Slug',
       type: 'slug',
@@ -36,6 +26,20 @@ export default {
         isUnique: isUniqueSlug,
       },
       description: 'Required, must be unique',
+      validation: (Rule) => Rule.required(),
+    },
+    {
+      name: 'lightColor',
+      title: 'Light color',
+      type: 'color',
+      description: 'Required',
+      validation: (Rule) => Rule.required(),
+    },
+    {
+      name: 'darkColor',
+      title: 'Dark Color',
+      type: 'color',
+      description: 'Required',
       validation: (Rule) => Rule.required(),
     },
     {
@@ -49,15 +53,27 @@ export default {
   preview: {
     select: {
       name: 'name',
-      color: 'color.hex',
+      lightColor: 'lightColor.hex',
+      darkColor: 'darkColor.hex',
     },
-    prepare({ name, color }) {
+    prepare({ name, lightColor, darkColor }) {
       return {
         media: (
-          <div
-            style={{ backgroundColor: color, width: '80px', height: '80px' }}
-          >
-            {color}
+          <div>
+            <div
+              style={{
+                backgroundColor: lightColor,
+                width: '35px',
+                height: '35px',
+              }}
+            />
+            <div
+              style={{
+                backgroundColor: darkColor,
+                width: '35px',
+                height: '35px',
+              }}
+            />
           </div>
         ),
         title: name,
