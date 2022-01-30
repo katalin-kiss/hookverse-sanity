@@ -29,15 +29,8 @@ export default {
       validation: (Rule) => Rule.required(),
     },
     {
-      name: 'lightColor',
-      title: 'Light color',
-      type: 'color',
-      description: 'Required',
-      validation: (Rule) => Rule.required(),
-    },
-    {
-      name: 'darkColor',
-      title: 'Dark Color',
+      name: 'color',
+      title: 'Color',
       type: 'color',
       description: 'Required',
       validation: (Rule) => Rule.required(),
@@ -53,25 +46,17 @@ export default {
   preview: {
     select: {
       name: 'name',
-      lightColor: 'lightColor.hex',
-      darkColor: 'darkColor.hex',
+      color: 'color.hex',
     },
-    prepare({ name, lightColor, darkColor }) {
+    prepare({ name, color }) {
       return {
         media: (
           <div>
             <div
               style={{
-                backgroundColor: lightColor,
-                width: '35px',
+                backgroundColor: color,
                 height: '35px',
-              }}
-            />
-            <div
-              style={{
-                backgroundColor: darkColor,
                 width: '35px',
-                height: '35px',
               }}
             />
           </div>
